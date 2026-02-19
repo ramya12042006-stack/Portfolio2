@@ -7,22 +7,22 @@
 }
 
 body, html {
-    height: 500vh;
+    height: 100%;
     overflow-x: hidden;
     font-family: Arial, sans-serif;
     background: #111;
 }
 
 .scroll-container {
-    height: 100%; /* Increase scroll area to control animation */
+    height: 5000px; /* Increase scroll area to control animation */
     width: 100%;
-    position: fixed;
+    position: relative;
 }
 
 canvas {
     position: fixed; /* Stays on screen while scrolling */
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
     height: auto;
