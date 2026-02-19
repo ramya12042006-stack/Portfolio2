@@ -1,8 +1,8 @@
 // script.js
 
-const frameCount = 240;
+const framesCount = 240;
 const images = [];
-let currentframes = index => `frames/ezgif-frames-${String(index).padStart(3, '0')}.jpg`;
+let currentframes = index => `frames/ezgif-frame-${String(index).padStart(3, '0')}.jpg`;
 
 const canvas = document.getElementById('animationCanvas');
 const context = canvas.getContext('2d');
