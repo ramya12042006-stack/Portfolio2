@@ -1,17 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scrollable Frame Animation</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramya K | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:transparent;
+  color:#0a0a0a;
+  overflow-x:hidden;
+}
+
+/* ===== BACKGROUND ANIMATION ===== */
+#bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  object-fit:cover;
+  z-index:-1;
+  opacity:0.08;   /* watermark visibility */
+  pointer-events:none;
+}
+
+/* ===== CONTENT ===== */
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+  padding:100px 0;
+}
+
+/* TRANSPARENT GLASS TEXT ONLY (NO WHITE BLOCKS) */
+section{
+  padding:80px 0;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding-top:140px;
+}
+
+.hero h1{
+  font-size:48px;
+  font-weight:700;
+  color:#0a3d62;
+}
+
+.hero h2{
+  margin-top:10px;
+  color:#2980b9;
+  font-weight:400;
+}
+
+.hero p{
+  max-width:750px;
+  margin:25px auto;
+  line-height:1.8;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 28px;
+  margin:10px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.primary{
+  background:#0a3d62;
+  color:#fff;
+}
+
+.secondary{
+  border:2px solid #0a3d62;
+  color:#0a3d62;
+}
+
+.primary:hover{
+  background:#074173;
+}
+
+.secondary:hover{
+  background:#0a3d62;
+  color:#fff;
+}
+
+/* TITLES */
+.section-title{
+  font-size:26px;
+  margin-bottom:30px;
+  color:#0a3d62;
+  border-left:4px solid #2980b9;
+  padding-left:10px;
+}
+
+/* TIMELINE */
+.timeline{
+  border-left:3px solid #2980b9;
+  padding-left:25px;
+}
+
+.timeline-item{
+  margin-bottom:25px;
+}
+
+/* SKILLS */
+.skill{
+  margin-bottom:15px;
+}
+
+.skill-bar{
+  height:8px;
+  background:#ddd;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.skill-bar span{
+  display:block;
+  height:100%;
+  background:#2980b9;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px 0;
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero h1{
+    font-size:32px;
+  }
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="scroll-container">
-        <canvas id="frameCanvas"></canvas>
+<!-- BACKGROUND IMAGE -->
+<img id="bg" src="frames/ezgif-frame-001.jpg" alt="background animation">
+
+<div class="container">
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Ramya K</h1>
+  <h2>ECE Student | Embedded Systems & IoT Enthusiast</h2>
+  <p>
+    Passionate Electronics and Communication Engineering student with strong interest in Embedded Systems, IoT and real-time hardware projects.
+    Seeking internship and project opportunities to apply technical knowledge in real-world applications.
+  </p>
+
+  <a href="resume.pdf" class="btn primary" download>Download Resume</a>
+  <a href="#contact" class="btn secondary">Contact Me</a>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <h2 class="section-title">About Me</h2>
+  <p>
+    I am currently pursuing 3rd year B.E. Electronics and Communication Engineering at Government College of Engineering, Tirunelveli.
+    My CGPA is 7.64. I am passionate about electronics hardware projects and interested in Embedded Systems, IoT and Communication Systems.
+    I am a quick learner and team-oriented student.
+  </p>
+</section>
+
+<!-- EDUCATION -->
+<section>
+  <h2 class="section-title">Education</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>B.E. Electronics and Communication Engineering</h3>
+      <p>Government College of Engineering, Tirunelveli</p>
+      <p>CGPA: 7.64 | 2023 – 2027</p>
     </div>
 
-    <script src="script.js"></script>
+    <div class="timeline-item">
+      <h3>Higher Secondary</h3>
+      <p>School Name – Placeholder</p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>SSLC</h3>
+      <p>School Name – Placeholder</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <h2 class="section-title">Skills</h2>
+
+  <div class="skill">
+    <p>C Programming</p>
+    <div class="skill-bar"><span style="width:75%"></span></div>
+  </div>
+
+  <div class="skill">
+    <p>Embedded Systems</p>
+    <div class="skill-bar"><span style="width:70%"></span></div>
+  </div>
+
+  <div class="skill">
+    <p>Microcontrollers</p>
+    <div class="skill-bar"><span style="width:70%"></span></div>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact</h2>
+  <p>Email: yourmail@gmail.com</p>
+  <p>LinkedIn: linkedin.com/in/yourprofile</p>
+  <p>GitHub: github.com/yourprofile</p>
+  <p>Location: Tamil Nadu, India</p>
+</section>
+
+<footer>
+  © 2026 Ramya K | ECE Student Portfolio
+</footer>
+
+</div>
+
+<script>
+
+/* SMOOTH SCROLL FRAME ANIMATION */
+
+const frameCount = 240;
+const bg = document.getElementById("bg");
+
+/* Preload images for smooth animation */
+const images = [];
+for(let i=1;i<=frameCount;i++){
+  const img = new Image();
+  const num = String(i).padStart(3,'0');
+  img.src = `frames/ezgif-frame-${num}.jpg`;
+  images.push(img);
+}
+
+window.addEventListener("scroll", () => {
+
+  const scrollTop = window.scrollY;
+  const maxScroll = document.body.scrollHeight - window.innerHeight;
+  const scrollFraction = scrollTop / maxScroll;
+
+  const frameIndex = Math.min(
+    frameCount - 1,
+    Math.floor(scrollFraction * frameCount)
+  );
+
+  bg.src = images[frameIndex].src;
+
+});
+
+</script>
+
 </body>
 </html>
