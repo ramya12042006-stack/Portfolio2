@@ -3,345 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ramya K | ECE Portfolio</title>
+<title>Ramya K | Portfolio</title>
 
-<!-- SEO -->
-<meta name="description" content="Ramya K - ECE Student | Embedded Systems & IoT Enthusiast | Government College of Engineering, Tirunelveli">
-<meta name="keywords" content="Ramya K, ECE Student, Embedded Systems, IoT, Electronics, Internship, Portfolio">
-<meta name="author" content="Ramya K">
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#ffffff;
-    color:#1a1a1a;
-    overflow-x:hidden;
+  background:black;
+  color:white;
+  overflow-x:hidden;
 }
 
-/* Animated Background */
-#bg-canvas{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:-1;
-    opacity:0.08;
-    filter:brightness(1.6);
+/* ===== BACKGROUND FRAME ANIMATION ===== */
+#bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  object-fit:cover;
+  z-index:-2;
+  opacity:0.25;                 /* make animation visible */
+  filter:brightness(1.4);       /* increase brightness */
+  pointer-events:none;
 }
 
-/* Layout */
+/* ===== BLACK TRANSPARENT OVERLAY ===== */
+.overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background:rgba(0,0,0,0.65);  /* black transparent layer */
+  z-index:-1;
+}
+
+/* ===== CONTENT ===== */
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:auto;
+  padding:100px 0;
+}
+
 section{
-    padding:80px 10%;
+  padding:80px 0;
 }
 
-h1,h2,h3{
-    color:#0b3d91;
-}
-
+/* HERO */
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+  text-align:center;
+  padding-top:140px;
 }
 
 .hero h1{
-    font-size:48px;
-    font-weight:700;
+  font-size:48px;
+  font-weight:700;
+  color:#4da6ff;
+}
+
+.hero h2{
+  margin-top:10px;
+  color:#8ec6ff;
+  font-weight:400;
 }
 
 .hero p{
-    max-width:650px;
-    margin:20px 0;
-    font-size:18px;
-    line-height:1.6;
+  max-width:750px;
+  margin:25px auto;
+  line-height:1.8;
+  color:#e0e0e0;
 }
 
 .btn{
-    padding:12px 24px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:500;
-    margin-right:15px;
-    transition:0.3s;
+  display:inline-block;
+  padding:12px 28px;
+  margin:10px;
+  border-radius:30px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
 }
 
-.btn-primary{
-    background:#0b3d91;
-    color:white;
+.primary{
+  background:#4da6ff;
+  color:black;
 }
 
-.btn-primary:hover{
-    background:#072c6b;
+.secondary{
+  border:2px solid #4da6ff;
+  color:#4da6ff;
 }
 
-.btn-outline{
-    border:2px solid #0b3d91;
-    color:#0b3d91;
+.primary:hover{
+  background:#3399ff;
 }
 
-.btn-outline:hover{
-    background:#0b3d91;
-    color:white;
+.secondary:hover{
+  background:#4da6ff;
+  color:black;
 }
 
-/* Cards */
-.card{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-    margin-bottom:20px;
-    transition:0.3s;
+/* TITLES */
+.section-title{
+  font-size:26px;
+  margin-bottom:30px;
+  color:#4da6ff;
+  border-left:4px solid #4da6ff;
+  padding-left:10px;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-}
-
-/* Timeline */
+/* TIMELINE */
 .timeline{
-    border-left:3px solid #0b3d91;
-    padding-left:20px;
+  border-left:3px solid #4da6ff;
+  padding-left:25px;
 }
 
 .timeline-item{
-    margin-bottom:30px;
+  margin-bottom:25px;
 }
 
-/* Skills */
+/* SKILLS */
 .skill{
-    margin-bottom:15px;
+  margin-bottom:15px;
 }
 
-.progress{
-    background:#e0e0e0;
-    border-radius:20px;
-    overflow:hidden;
+.skill-bar{
+  height:8px;
+  background:#333;
+  border-radius:20px;
+  overflow:hidden;
 }
 
-.progress-bar{
-    height:8px;
-    background:#0b3d91;
+.skill-bar span{
+  display:block;
+  height:100%;
+  background:#4da6ff;
 }
 
-/* Contact */
-input,textarea{
-    width:100%;
-    padding:10px;
-    margin-bottom:15px;
-    border-radius:5px;
-    border:1px solid #ccc;
-}
-
+/* FOOTER */
 footer{
-    text-align:center;
-    padding:20px;
-    background:#f5f7fb;
-    font-size:14px;
+  text-align:center;
+  padding:30px 0;
+  font-size:14px;
+  color:#aaa;
 }
 
-/* Responsive */
 @media(max-width:768px){
-    .hero h1{
-        font-size:34px;
-    }
-    section{
-        padding:60px 6%;
-    }
+  .hero h1{
+    font-size:32px;
+  }
 }
+
 </style>
 </head>
 
 <body>
 
-<canvas id="bg-canvas"></canvas>
+<!-- Background Animation -->
+<img id="bg" src="frames/ezgif-frame-001.jpg" alt="background animation">
+<div class="overlay"></div>
 
-<!-- HERO -->
+<div class="container">
+
 <section class="hero">
-    <h1>Ramya K</h1>
-    <h3>ECE Student | Embedded Systems & IoT Enthusiast</h3>
-    <p>
-        Passionate Electronics and Communication Engineering student with strong interest in Embedded Systems, IoT and real-time hardware projects. Seeking internship and project opportunities to apply technical knowledge in real-world applications.
-    </p>
-    <div>
-        <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
-    </div>
+  <h1>Ramya K</h1>
+  <h2>ECE Student | Embedded Systems & IoT Enthusiast</h2>
+  <p>
+    Passionate Electronics and Communication Engineering student with strong interest in Embedded Systems, IoT and real-time hardware projects.
+    Seeking internship and project opportunities to apply technical knowledge in real-world applications.
+  </p>
+
+  <a href="resume.pdf" class="btn primary" download>Download Resume</a>
+  <a href="#contact" class="btn secondary">Contact Me</a>
 </section>
 
-<!-- ABOUT -->
 <section>
-    <h2>About Me</h2>
-    <p>
-        I am currently pursuing 3rd year B.E. Electronics and Communication Engineering at Government College of Engineering, Tirunelveli.
-        My current CGPA is 7.64. I am passionate about electronics hardware projects and deeply interested in Embedded Systems, IoT and Communication Systems.
-        I am a quick learner and a team-oriented student aiming to build strong technical expertise.
-    </p>
+  <h2 class="section-title">About Me</h2>
+  <p>
+    I am currently pursuing 3rd year B.E. Electronics and Communication Engineering at Government College of Engineering, Tirunelveli.
+    My CGPA is 7.64. I am passionate about electronics hardware projects and interested in Embedded Systems, IoT and Communication Systems.
+  </p>
 </section>
 
-<!-- EDUCATION -->
 <section>
-    <h2>Education</h2>
-    <div class="timeline">
-
-        <div class="timeline-item">
-            <h3>B.E. Electronics and Communication Engineering</h3>
-            <p>Government College of Engineering, Tirunelveli</p>
-            <p>CGPA: 7.64</p>
-            <p>2023 – 2027</p>
-        </div>
-
-        <div class="timeline-item">
-            <h3>Higher Secondary (12th)</h3>
-            <p>[School Name]</p>
-            <p>[Percentage]</p>
-        </div>
-
-        <div class="timeline-item">
-            <h3>SSLC (10th)</h3>
-            <p>[School Name]</p>
-            <p>[Percentage]</p>
-        </div>
-
+  <h2 class="section-title">Education</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>B.E. Electronics and Communication Engineering</h3>
+      <p>Government College of Engineering, Tirunelveli</p>
+      <p>CGPA: 7.64 | 2023 – 2027</p>
     </div>
+  </div>
 </section>
 
-<!-- PROJECTS -->
-<section>
-    <h2>Projects</h2>
-
-    <div class="card">
-        <h3>Rain Detection System</h3>
-        <p>
-            Designed and implemented a rain detection system using rain sensor module to detect rainfall and trigger alert system. The system can be used in agriculture and automated weather monitoring applications.
-        </p>
-        <strong>Technologies Used:</strong>
-        <ul>
-            <li>Rain Sensor</li>
-            <li>Microcontroller</li>
-            <li>Basic Embedded Programming</li>
-            <li>Hardware Circuit Design</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>Future Projects</h3>
-        <ul>
-            <li>IoT Based Smart Monitoring System</li>
-            <li>Embedded System Mini Project</li>
-        </ul>
-    </div>
-</section>
-
-<!-- SKILLS -->
-<section>
-    <h2>Technical Skills</h2>
-
-    <div class="skill">
-        C Programming
-        <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
-    </div>
-
-    <div class="skill">
-        Embedded Systems Basics
-        <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
-    </div>
-
-    <div class="skill">
-        Microcontrollers (Arduino/8051)
-        <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
-    </div>
-
-    <div class="skill">
-        Basic IoT
-        <div class="progress"><div class="progress-bar" style="width:65%"></div></div>
-    </div>
-
-    <h2 style="margin-top:40px;">Soft Skills</h2>
-
-    <ul>
-        <li>Teamwork</li>
-        <li>Problem Solving</li>
-        <li>Quick Learning</li>
-        <li>Time Management</li>
-    </ul>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section>
-    <h2>Certifications</h2>
-
-    <div class="card">Embedded Systems Certification (Future)</div>
-    <div class="card">IoT Workshop (Future)</div>
-    <div class="card">Technical Internship (Future)</div>
-</section>
-
-<!-- CONTACT -->
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yourmail@example.com</p>
-    <p>LinkedIn: [Add Link]</p>
-    <p>GitHub: [Add Link]</p>
-    <p>Location: Tamil Nadu, India</p>
-
-    <form>
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea rows="5" placeholder="Your Message"></textarea>
-        <button class="btn btn-primary">Send Message</button>
-    </form>
+  <h2 class="section-title">Contact</h2>
+  <p>Email: yourmail@gmail.com</p>
+  <p>Location: Tamil Nadu, India</p>
 </section>
 
 <footer>
-    © 2026 Ramya K | ECE Student Portfolio
+  © 2026 Ramya K | ECE Student Portfolio
 </footer>
 
-<!-- Background Scroll Animation -->
-<script>
-const canvas = document.getElementById("bg-canvas");
-const ctx = canvas.getContext("2d");
+</div>
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+<script>
+
+/* SMOOTH SCROLL FRAME ANIMATION */
 
 const frameCount = 240;
-const currentFrame = index => `frames/ezgif-frame-${String(index+1).padStart(3,'0')}.jpg`;
+const bg = document.getElementById("bg");
 
+/* Preload frames for smooth effect */
 const images = [];
-const imageSeq = {frame:0};
-
-for(let i=0;i<frameCount;i++){
-    const img = new Image();
-    img.src = currentFrame(i);
-    images.push(img);
+for(let i=1;i<=frameCount;i++){
+  const img = new Image();
+  const num = String(i).padStart(3,'0');
+  img.src = `frames/ezgif-frame-${num}.jpg`;
+  images.push(img);
 }
 
-window.addEventListener('scroll',()=>{
-    const scrollTop = document.documentElement.scrollTop;
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollFraction = scrollTop / maxScroll;
-    imageSeq.frame = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount));
-    render();
+window.addEventListener("scroll", () => {
+
+  const scrollTop = window.scrollY;
+  const maxScroll = document.body.scrollHeight - window.innerHeight;
+  const scrollFraction = scrollTop / maxScroll;
+
+  const frameIndex = Math.min(
+    frameCount - 1,
+    Math.floor(scrollFraction * frameCount)
+  );
+
+  bg.src = images[frameIndex].src;
+
 });
 
-function render(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.drawImage(images[imageSeq.frame],0,0,canvas.width,canvas.height);
-}
-
-images[0].onload = render;
 </script>
 
 </body>
