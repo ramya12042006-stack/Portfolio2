@@ -3,279 +3,345 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ramya K | Portfolio</title>
+<title>Ramya K | ECE Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- SEO -->
+<meta name="description" content="Ramya K - ECE Student | Embedded Systems & IoT Enthusiast | Government College of Engineering, Tirunelveli">
+<meta name="keywords" content="Ramya K, ECE Student, Embedded Systems, IoT, Electronics, Internship, Portfolio">
+<meta name="author" content="Ramya K">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-  scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-  background:transparent;
-  color:#0a0a0a;
-  overflow-x:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:#1a1a1a;
+    overflow-x:hidden;
 }
 
-/* ===== BACKGROUND ANIMATION ===== */
-#bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100vh;
-  object-fit:cover;
-  z-index:-1;
-  opacity:0.08;   /* watermark visibility */
-  pointer-events:none;
+/* Animated Background */
+#bg-canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    opacity:0.08;
+    filter:brightness(1.6);
 }
 
-/* ===== CONTENT ===== */
-.container{
-  width:90%;
-  max-width:1100px;
-  margin:auto;
-  padding:100px 0;
-}
-
-/* TRANSPARENT GLASS TEXT ONLY (NO WHITE BLOCKS) */
+/* Layout */
 section{
-  padding:80px 0;
+    padding:80px 10%;
 }
 
-/* HERO */
+h1,h2,h3{
+    color:#0b3d91;
+}
+
 .hero{
-  text-align:center;
-  padding-top:140px;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .hero h1{
-  font-size:48px;
-  font-weight:700;
-  color:#0a3d62;
-}
-
-.hero h2{
-  margin-top:10px;
-  color:#2980b9;
-  font-weight:400;
+    font-size:48px;
+    font-weight:700;
 }
 
 .hero p{
-  max-width:750px;
-  margin:25px auto;
-  line-height:1.8;
+    max-width:650px;
+    margin:20px 0;
+    font-size:18px;
+    line-height:1.6;
 }
 
 .btn{
-  display:inline-block;
-  padding:12px 28px;
-  margin:10px;
-  border-radius:30px;
-  text-decoration:none;
-  font-size:14px;
-  transition:0.3s;
+    padding:12px 24px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:500;
+    margin-right:15px;
+    transition:0.3s;
 }
 
-.primary{
-  background:#0a3d62;
-  color:#fff;
+.btn-primary{
+    background:#0b3d91;
+    color:white;
 }
 
-.secondary{
-  border:2px solid #0a3d62;
-  color:#0a3d62;
+.btn-primary:hover{
+    background:#072c6b;
 }
 
-.primary:hover{
-  background:#074173;
+.btn-outline{
+    border:2px solid #0b3d91;
+    color:#0b3d91;
 }
 
-.secondary:hover{
-  background:#0a3d62;
-  color:#fff;
+.btn-outline:hover{
+    background:#0b3d91;
+    color:white;
 }
 
-/* TITLES */
-.section-title{
-  font-size:26px;
-  margin-bottom:30px;
-  color:#0a3d62;
-  border-left:4px solid #2980b9;
-  padding-left:10px;
+/* Cards */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom:20px;
+    transition:0.3s;
 }
 
-/* TIMELINE */
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* Timeline */
 .timeline{
-  border-left:3px solid #2980b9;
-  padding-left:25px;
+    border-left:3px solid #0b3d91;
+    padding-left:20px;
 }
 
 .timeline-item{
-  margin-bottom:25px;
+    margin-bottom:30px;
 }
 
-/* SKILLS */
+/* Skills */
 .skill{
-  margin-bottom:15px;
+    margin-bottom:15px;
 }
 
-.skill-bar{
-  height:8px;
-  background:#ddd;
-  border-radius:20px;
-  overflow:hidden;
+.progress{
+    background:#e0e0e0;
+    border-radius:20px;
+    overflow:hidden;
 }
 
-.skill-bar span{
-  display:block;
-  height:100%;
-  background:#2980b9;
+.progress-bar{
+    height:8px;
+    background:#0b3d91;
 }
 
-/* FOOTER */
+/* Contact */
+input,textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
 footer{
-  text-align:center;
-  padding:30px 0;
-  font-size:14px;
+    text-align:center;
+    padding:20px;
+    background:#f5f7fb;
+    font-size:14px;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media(max-width:768px){
-  .hero h1{
-    font-size:32px;
-  }
+    .hero h1{
+        font-size:34px;
+    }
+    section{
+        padding:60px 6%;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND IMAGE -->
-<img id="bg" src="frames/ezgif-frame-001.jpg" alt="background animation">
-
-<div class="container">
+<canvas id="bg-canvas"></canvas>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Ramya K</h1>
-  <h2>ECE Student | Embedded Systems & IoT Enthusiast</h2>
-  <p>
-    Passionate Electronics and Communication Engineering student with strong interest in Embedded Systems, IoT and real-time hardware projects.
-    Seeking internship and project opportunities to apply technical knowledge in real-world applications.
-  </p>
-
-  <a href="resume.pdf" class="btn primary" download>Download Resume</a>
-  <a href="#contact" class="btn secondary">Contact Me</a>
+    <h1>Ramya K</h1>
+    <h3>ECE Student | Embedded Systems & IoT Enthusiast</h3>
+    <p>
+        Passionate Electronics and Communication Engineering student with strong interest in Embedded Systems, IoT and real-time hardware projects. Seeking internship and project opportunities to apply technical knowledge in real-world applications.
+    </p>
+    <div>
+        <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
 </section>
 
 <!-- ABOUT -->
 <section>
-  <h2 class="section-title">About Me</h2>
-  <p>
-    I am currently pursuing 3rd year B.E. Electronics and Communication Engineering at Government College of Engineering, Tirunelveli.
-    My CGPA is 7.64. I am passionate about electronics hardware projects and interested in Embedded Systems, IoT and Communication Systems.
-    I am a quick learner and team-oriented student.
-  </p>
+    <h2>About Me</h2>
+    <p>
+        I am currently pursuing 3rd year B.E. Electronics and Communication Engineering at Government College of Engineering, Tirunelveli.
+        My current CGPA is 7.64. I am passionate about electronics hardware projects and deeply interested in Embedded Systems, IoT and Communication Systems.
+        I am a quick learner and a team-oriented student aiming to build strong technical expertise.
+    </p>
 </section>
 
 <!-- EDUCATION -->
 <section>
-  <h2 class="section-title">Education</h2>
+    <h2>Education</h2>
+    <div class="timeline">
 
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>B.E. Electronics and Communication Engineering</h3>
-      <p>Government College of Engineering, Tirunelveli</p>
-      <p>CGPA: 7.64 | 2023 – 2027</p>
+        <div class="timeline-item">
+            <h3>B.E. Electronics and Communication Engineering</h3>
+            <p>Government College of Engineering, Tirunelveli</p>
+            <p>CGPA: 7.64</p>
+            <p>2023 – 2027</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Higher Secondary (12th)</h3>
+            <p>[School Name]</p>
+            <p>[Percentage]</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>SSLC (10th)</h3>
+            <p>[School Name]</p>
+            <p>[Percentage]</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Rain Detection System</h3>
+        <p>
+            Designed and implemented a rain detection system using rain sensor module to detect rainfall and trigger alert system. The system can be used in agriculture and automated weather monitoring applications.
+        </p>
+        <strong>Technologies Used:</strong>
+        <ul>
+            <li>Rain Sensor</li>
+            <li>Microcontroller</li>
+            <li>Basic Embedded Programming</li>
+            <li>Hardware Circuit Design</li>
+        </ul>
     </div>
 
-    <div class="timeline-item">
-      <h3>Higher Secondary</h3>
-      <p>School Name – Placeholder</p>
+    <div class="card">
+        <h3>Future Projects</h3>
+        <ul>
+            <li>IoT Based Smart Monitoring System</li>
+            <li>Embedded System Mini Project</li>
+        </ul>
     </div>
-
-    <div class="timeline-item">
-      <h3>SSLC</h3>
-      <p>School Name – Placeholder</p>
-    </div>
-  </div>
 </section>
 
 <!-- SKILLS -->
 <section>
-  <h2 class="section-title">Skills</h2>
+    <h2>Technical Skills</h2>
 
-  <div class="skill">
-    <p>C Programming</p>
-    <div class="skill-bar"><span style="width:75%"></span></div>
-  </div>
+    <div class="skill">
+        C Programming
+        <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+    </div>
 
-  <div class="skill">
-    <p>Embedded Systems</p>
-    <div class="skill-bar"><span style="width:70%"></span></div>
-  </div>
+    <div class="skill">
+        Embedded Systems Basics
+        <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+    </div>
 
-  <div class="skill">
-    <p>Microcontrollers</p>
-    <div class="skill-bar"><span style="width:70%"></span></div>
-  </div>
+    <div class="skill">
+        Microcontrollers (Arduino/8051)
+        <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
+    </div>
 
+    <div class="skill">
+        Basic IoT
+        <div class="progress"><div class="progress-bar" style="width:65%"></div></div>
+    </div>
+
+    <h2 style="margin-top:40px;">Soft Skills</h2>
+
+    <ul>
+        <li>Teamwork</li>
+        <li>Problem Solving</li>
+        <li>Quick Learning</li>
+        <li>Time Management</li>
+    </ul>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section>
+    <h2>Certifications</h2>
+
+    <div class="card">Embedded Systems Certification (Future)</div>
+    <div class="card">IoT Workshop (Future)</div>
+    <div class="card">Technical Internship (Future)</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2 class="section-title">Contact</h2>
-  <p>Email: yourmail@gmail.com</p>
-  <p>LinkedIn: linkedin.com/in/yourprofile</p>
-  <p>GitHub: github.com/yourprofile</p>
-  <p>Location: Tamil Nadu, India</p>
+    <h2>Contact</h2>
+    <p>Email: yourmail@example.com</p>
+    <p>LinkedIn: [Add Link]</p>
+    <p>GitHub: [Add Link]</p>
+    <p>Location: Tamil Nadu, India</p>
+
+    <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button class="btn btn-primary">Send Message</button>
+    </form>
 </section>
 
 <footer>
-  © 2026 Ramya K | ECE Student Portfolio
+    © 2026 Ramya K | ECE Student Portfolio
 </footer>
 
-</div>
-
+<!-- Background Scroll Animation -->
 <script>
+const canvas = document.getElementById("bg-canvas");
+const ctx = canvas.getContext("2d");
 
-/* SMOOTH SCROLL FRAME ANIMATION */
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 const frameCount = 240;
-const bg = document.getElementById("bg");
+const currentFrame = index => `frames/ezgif-frame-${String(index+1).padStart(3,'0')}.jpg`;
 
-/* Preload images for smooth animation */
 const images = [];
-for(let i=1;i<=frameCount;i++){
-  const img = new Image();
-  const num = String(i).padStart(3,'0');
-  img.src = `frames/ezgif-frame-${num}.jpg`;
-  images.push(img);
+const imageSeq = {frame:0};
+
+for(let i=0;i<frameCount;i++){
+    const img = new Image();
+    img.src = currentFrame(i);
+    images.push(img);
 }
 
-window.addEventListener("scroll", () => {
-
-  const scrollTop = window.scrollY;
-  const maxScroll = document.body.scrollHeight - window.innerHeight;
-  const scrollFraction = scrollTop / maxScroll;
-
-  const frameIndex = Math.min(
-    frameCount - 1,
-    Math.floor(scrollFraction * frameCount)
-  );
-
-  bg.src = images[frameIndex].src;
-
+window.addEventListener('scroll',()=>{
+    const scrollTop = document.documentElement.scrollTop;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollFraction = scrollTop / maxScroll;
+    imageSeq.frame = Math.min(frameCount - 1, Math.floor(scrollFraction * frameCount));
+    render();
 });
 
+function render(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.drawImage(images[imageSeq.frame],0,0,canvas.width,canvas.height);
+}
+
+images[0].onload = render;
 </script>
 
 </body>
